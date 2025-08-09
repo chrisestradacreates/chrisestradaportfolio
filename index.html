@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chris Estrada — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--ink:#000;--muted:#555;--line:rgba(0,0,0,.12);--bg:#fff;--grid:rgba(0,0,0,.02);--pill:#f2f2f2;--pillH:#e6e6e6;--radius:14px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink)}
+    main{max-width:920px;margin:0 auto;padding:72px 20px 40px}
+    h1{font-size:2.6rem;margin:0 0 .75rem}
+    p{line-height:1.7;margin:.4rem 0}
+    .lead{font-size:1.15rem}
+
+    /* Graph paper only for bottom half */
+    .graphpaper{background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px),linear-gradient(to bottom,var(--grid) 1px,transparent 1px);background-size:40px 40px;padding:32px 0;margin-top:56px;border-top:1px solid var(--line)}
+
+    .work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    @media(max-width:800px){.work-grid{grid-template-columns:1fr}}
+
+    .card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:22px;position:relative;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.06)}
+
+    /* Hover hint only when collapsed */
+    .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:var(--radius);background:rgba(255,255,255,.92);font-size:.95rem;color:var(--muted);opacity:0;transition:opacity .2s ease;pointer-events:none}
+    .card.collapsed:hover .overlay{opacity:1}
+    .card.expanded .overlay{opacity:0}
+
+    /* Expand/collapse */
+    .details{display:none;opacity:0;margin-top:12px}
+    .card.expanded .details{display:block;animation:fade .25s ease-out forwards}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+
+    .meta p{margin:.35rem 0;color:#111}
+    .meta p b{color:#000}
+
+    .view-btn{display:inline-block;margin-top:12px;padding:9px 16px;border-radius:999px;background:var(--pill);border:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:.92rem}
+    .view-btn:hover{background:var(--pillH)}
+    .view-btn:focus{outline:none;box-shadow:0 0 0 2px #000 inset}
+
+    footer{padding:28px 0;border-top:1px solid var(--line);text-align:center}
+    .social-text{font-weight:600;margin-bottom:8px}
+    .social-icons{display:flex;justify-content:center;gap:22px;align-items:center}
+    .social-icons a{color:#000;text-decoration:none;display:flex;gap:8px;align-items:center;font-size:18px}
+    .email-text{font-size:.9rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="typer-name" data-text="Chris Estrada"></h1>
+    <p id="typer-line1" class="lead" data-text="I am a Stanford Engineering Student aiming to make the world a better place through innovation, creativity, and empathy."></p>
+    <p id="typer-line2" data-text="I have always loved creating. I do not like to sit around and wait for a solution to be made, I want to be part of creating the solution."></p>
+
+    <section class="graphpaper">
+      <h2 style="margin:0 0 14px">My Work</h2>
+      <div class="work-grid">
+        <!-- SaveShare -->
+        <article class="card collapsed" id="card-saveshare">
+          <div class="overlay">Click to learn more</div>
+          <h3>SaveShare</h3>
+          <div class="details">
+            <p>Secure, organization-specific ride-sharing prototype addressing safety, cost efficiency, and sustainability for students traveling to common destinations.</p>
+            <div class="meta">
+              <p><b>Role</b><br>Creator & UI/UX Designer</p>
+              <p><b>Tools</b><br>Figma</p>
+              <p><b>Outcome</b><br>Built functional prototype with secure access, ride listings, event integration, and messaging to coordinate safe, cost-effective shared rides.</p>
+            </div>
+            <a class="view-btn" href="https://youtu.be/4TzQcQd08Ro?si=qXoBWgHAbqq79OMT&t=46" target="_blank" rel="noopener" onclick="event.stopPropagation()">View demo</a>
+          </div>
+        </article>
+
+        <!-- AllSparkLegal -->
+        <article class="card collapsed" id="card-allspark">
+          <div class="overlay">Click to learn more</div>
+          <h3>AllSparkLegal</h3>
+          <div class="details">
+            <p>Legal intake and document review web app with Spanish accessibility, designed for law firms.</p>
+            <div class="meta">
+              <p><b>Role</b><br>Product Manager Intern</p>
+              <p><b>Outcome</b><br>Shipped MVP on schedule, built to be accessible and I built UX and UI features, validated product direction, and informed roadmap through competitive analysis.</p>
+            </div>
+            <a class="view-btn" href="https://firedincalifornia.com" target="_blank" rel="noopener" onclick="event.stopPropagation()">View site</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-text">you can reach me at :D</div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/chrisestradaa/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:chrisest@stanford.edu" aria-label="Email"><i class="fas fa-envelope"></i><span class="email-text">chrisest@stanford.edu</span></a>
+    </div>
+  </footer>
+
+  <script>
+    // Typewriter effect
+    function typeText(el, text, speed=28){let i=0;el.textContent='';(function t(){if(i<text.length){el.textContent+=text[i++];setTimeout(t,speed)}})()}
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.addEventListener('DOMContentLoaded',()=>{
+      const n=document.getElementById('typer-name');
+      const l1=document.getElementById('typer-line1');
+      const l2=document.getElementById('typer-line2');
+      if(prefersReduced){n.textContent=n.dataset.text;l1.textContent=l1.dataset.text;l2.textContent=l2.dataset.text;}else{typeText(n,n.dataset.text);setTimeout(()=>typeText(l1,l1.dataset.text),800);setTimeout(()=>typeText(l2,l2.dataset.text),2000)}
+
+      // Expand/collapse
+      document.querySelectorAll('.card').forEach(c=>{
+        c.addEventListener('click',()=>{c.classList.toggle('expanded');c.classList.toggle('collapsed')})
+      })
+    })
+  </script>
+</body>
+</html>
